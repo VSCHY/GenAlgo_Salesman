@@ -2,6 +2,19 @@ from .problem import *
 from .functions_pop import *
 from .functions_basic import check_pop
 #from numba import cuda
+import time
+
+class follow_time():
+    def __init__(self):
+        self.t0 = time.time()
+        pass
+
+    def update(self):
+        t1=time.time()
+        delta = t1-self.t0
+        self.t0 = t1
+        return delta
+
 
 
 class geneticAlgo:
