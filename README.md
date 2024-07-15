@@ -1,6 +1,10 @@
 # GenAlgo_Salesman
 **Solving the Traveling Salesman Problem using a Genetic Algorithm**
 
+<p align="center">
+  <img src="docs/image.png" alt="GeneticAlgo" width="500" />
+</p>
+
 Welcome to the pedagogical project on solving the Traveling Salesman Problem (TSP) using a Genetic Algorithm (GA). This repository aims to provide a clear and educational implementation of a GA to tackle the TSP, designed for students and educators.
 
 ## Table of Contents

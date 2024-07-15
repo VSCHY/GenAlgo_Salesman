@@ -81,6 +81,13 @@ class geneticAlgo:
         if option == "random":
             self.population = np.array([np.random.permutation(self.gene_size) for _ in range(self.size_population)], dtype=np.int64)
         elif option != "random":
+            """
+            print(self.population.shape, self.population.dtype)
+            print(parent1.shape, parent1.dtype)
+            print(parent2.shape, parent2.dtype)
+            print(mutations.shape, mutations.dtype)
+            """
+
             self.population = get_new_pop(self.population, parent1 = parent1, parent2 = parent2, mutations = mutations)
         self.update_fitness()
         self.calculate_indicators()

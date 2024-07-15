@@ -4,7 +4,7 @@ from numba import jit
 from .functions_basic import *
 
 
-
+@jit(nopython = True)
 def get_uniform(size_population, size_breeding, size_mutation):
     selected_elements = np.random.choice(size_population, size_breeding, replace=False)
     np.random.shuffle(selected_elements)
@@ -16,6 +16,7 @@ def get_uniform(size_population, size_breeding, size_mutation):
 
     return parent1, parent2, mutations
 
+# @jit(nopython = True)
 def get_lottery(size_population, size_breeding, size_mutation, fitness):
     p = (1/fitness) / np.sum(1/fitness)
     selected_elements = np.random.choice(size_population, size_breeding, replace=False, p = p)
@@ -27,6 +28,11 @@ def get_lottery(size_population, size_breeding, size_mutation, fitness):
     mutations = np.random.choice(size_population, size_mutation, replace=False, p = p)
     return parent1, parent2, mutations
 
+def get_selected_elements_lottery(size_population, size_breeding, p):
+    return 
+
+
+@jit(nopython = True)
 def get_elitist(size_breeding, size_mutation, fitness):
     selected_elements = np.argsort(fitness); selected_elements[:size_breeding]
     np.random.shuffle(selected_elements)
@@ -40,7 +46,7 @@ def get_elitist(size_breeding, size_mutation, fitness):
 
 @jit(nopython = True)
 def get_tournament(size_population, size_tournament, fitness, size_breeding, top_perc = 10):
-    selected_elements = np.zeros(size_population)
+    selected_elements = np.zeros(size_population, dtype = np.int32)
     n = 0
     while n<size_population:
         subselect = np.random.choice(size_population, size_tournament, replace = False)
@@ -81,6 +87,7 @@ def generate_mutations(population, mutations):
 
 @jit(nopython = True)
 def get_new_pop(population, parent1, parent2, mutations):
+
     childs = generate_childs(population, parent1, parent2)
     mutants = generate_mutations(population, mutations)
     pop = np.vstack((childs, mutants))
