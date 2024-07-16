@@ -58,6 +58,12 @@ These options provide flexibility in how the genetic algorithm explores and expl
 
 ## Analysis
 
+The following graphs show the outcome of the genetic algorithm for each option to create a new population. For each option, 10 experiments have been launched with 20 generations. 
+
+First approach shows the evolution of the best fitness level over all previous generations. Second graph shows the evolution of average fitness and, finally, last graph shows the standard deviation of fitness level.
+
+Finally a table shows the average time to initialize the population and the mean, minimum and maximum for creating a new generation.
+
 <p align="center">
   <img src="Analysis/best_fitness.png" alt="best_fitness" width="500" />
 </p>
