@@ -56,6 +56,30 @@ The selection process is a crucial part of a Genetic Algorithm as it determines 
 These options provide flexibility in how the genetic algorithm explores and exploits the search space, helping to balance the diversity of solutions and the convergence towards optimal solutions.
 
 
+## Analysis
+
+<p align="center">
+  <img src="Analysis/best_fitness.png" alt="best_fitness" width="500" />
+</p>
+
+
+<p align="center">
+  <img src="Analysis/average_fitness.png" alt="av_fitness" width="500" />
+</p>
+
+<p align="center">
+  <img src="Analysis/fitness_variance.png" alt="av_fitness" width="500" />
+</p>
+
+
+|                          | uniform  | elitist  | lottery  | tournament | random   |
+|--------------------------|----------|----------|----------|------------|----------|
+| initialization (s.)      | 0.540111 | 0.529841 | 0.527267 | 0.563535   | 0.516741 |
+| mean new gen. (s.)       | 0.355836 | 0.346682 | 0.431739 | 1.126733   | 0.513094 |
+| min new gen. (s.)        | 0.305813 | 0.331343 | 0.416751 | 1.024163   | 0.493253 |
+| max new gen. (s.)        | 3.943145 | 1.563854 | 0.528138 | 2.898793   | 0.611241 |
+
+
 ## Project Structure
 
 ```plaintext
