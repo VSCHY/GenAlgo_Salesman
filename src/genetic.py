@@ -111,18 +111,6 @@ class geneticAlgo:
     def update_fitness(self):
         self.fitness = get_fitness(self.population, self.matrix)
         
-        # ESSAI CUDA
-        """
-        out = np.zeros(self.population.shape[0], dtype=np.int64)
-        threads_per_block = 128
-        blocks_per_grid = (self.population.shape[0] + (threads_per_block - 1)) // threads_per_block
-        d_a = cuda.to_device(self.population)
-        d_matrix = cuda.to_device(self.matrix)
-        d_out = cuda.to_device(out)
-        get_fitness_c[blocks_per_grid, threads_per_block](d_a, d_matrix, d_out)
-        out = d_out.copy_to_host()
-        """
-        
 
     def calculate_indicators(self):
         self.indicators["best_fitness"].append(np.min(self.fitness))

@@ -7,6 +7,8 @@
 
 Welcome to the pedagogical project on solving the Traveling Salesman Problem (TSP) using a Genetic Algorithm (GA). This repository aims to provide a clear and educational implementation of a GA to tackle the TSP, designed for students and educators.
 
+This repository supports a published article in Medium (**[see LINK](https://medium.com/@schrapff.ant/genetic-algorithms-for-unresolvable-optimization-problem-in-python-6c4fb43faa83)**): 
+
 ## Table of Contents
 
 - [Introduction](#introduction)

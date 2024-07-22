@@ -15,19 +15,6 @@ def get_fitness(a, matrix):
         out[i] = summ
     return out
 
-"""
-   
-
-@cuda.jit('(int64[:,:], int64[:,:], int64[:])')
-def get_fitness_c(a, matrix, out):
-    i = cuda.grid(1)  # Get the index of the current thread
-    if i < a.shape[0]:
-        summ = 0
-        for j in range(29):
-            summ = summ + matrix[a[i,j],a[i,j+1]]        
-        out[i] = summ
-
-"""
 ##########################
 
 @jit(nopython = True)

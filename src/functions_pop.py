@@ -28,14 +28,11 @@ def get_lottery(size_population, size_breeding, size_mutation, fitness):
     mutations = np.random.choice(size_population, size_mutation, replace=False, p = p)
     return parent1, parent2, mutations
 
-def get_selected_elements_lottery(size_population, size_breeding, p):
-    return 
-
-
 @jit(nopython = True)
 def get_elitist(size_breeding, size_mutation, fitness):
-    selected_elements = np.argsort(fitness); selected_elements[:size_breeding]
-    np.random.shuffle(selected_elements)
+    selected_elements = np.argsort(fitness); 
+    selected_elements_crossover = selected_elements[:size_breeding]
+    np.random.shuffle(selected_elements_crossover)
     #
     parent1 = selected_elements[:int(size_breeding/2)]
     parent2 = selected_elements[int(size_breeding/2):]
@@ -87,7 +84,6 @@ def generate_mutations(population, mutations):
 
 @jit(nopython = True)
 def get_new_pop(population, parent1, parent2, mutations):
-
     childs = generate_childs(population, parent1, parent2)
     mutants = generate_mutations(population, mutations)
     pop = np.vstack((childs, mutants))
